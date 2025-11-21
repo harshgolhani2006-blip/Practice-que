@@ -15,9 +15,11 @@ int main(){
     }
     int row[10],col[10];
 
+    //Mark all row and columns as not having zero initially
     for(int i=0;i<r;i++)row[i]=0;
     for(int j=0;j<c;j++)col[j]=0;
 
+    //Step 1: Find 0s and recordits row and columns.
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
             if(a[i][j]==0){
@@ -26,6 +28,8 @@ int main(){
             }
         }
     }
+
+    //Step 2: Set entire row and column to 0.
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
             if(row[i]==1 || col[j]==1){
@@ -33,6 +37,8 @@ int main(){
             }
         }
     }
+    
+    //Output.
     printf("Final Matrix:\n");
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
